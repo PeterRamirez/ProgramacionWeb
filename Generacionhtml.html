@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html long="es">
+	<head>
+		<meta charset='utf-8'>
+		<link rel="stylesheet" href="Css.css">	
+	</head>
+	<body onload="generar()">
+		<div id='contenido'>
+			<section>
+            <div  id='titulo'>  
+			 	</div>
+                 <div id='registro'>      
+                   <form>
+                     <div id="formulario">
+                     </div>
+                   </form>    
+			 	</div>                          
+	 	       <div  id='parrafo'>  
+			 	</div>   
+                <div  id='media'>  
+			 	</div>                        
+			</section>
+		</div>
+	</body>
+</html>
+<script>
+function generar() 
+	{
+		
+	var titulo="";	
+	var tab="";
+	var tab2="";
+	var tab3="";
+	
+	titulo+="<center><h1>Programación Web</h1></center>";
+     document.getElementById("titulo").innerHTML=titulo;
+	 
+	tab+="<h1>Registrate</h1>";
+    tab+="<label>Nombre</label><input type='text'  id='Nombre' placeholder='Nombre'>";
+	tab+="<br><label>Apellido</label><input type='text'  id='Apellido' placeholder='Apellido'>";
+	tab+="<br><label>E-mail</label><input type='email'  id='Correo' placeholder='E-mail'>";
+	tab+="<br><label>Fecha</label><input type='date'  id='Fecha' >";
+	tab+="<input type='submit' value='Registrate' id='#btnSubmit' onclick='validar(Correo.value)'>";
+		document.getElementById("formulario").innerHTML=tab;	
+	
+	 tab2+="<center><h1>Bienvenidos</h1></center>";            
+	 tab2+="<p>Esta en una practica usando las nuevas etiquetas de HTML5 que se aplicaran a nuestro proyecto, el tema del proyecto aún no esta definido pero como vemos en esta pagina se              usaran las nuevas etiquetas para un mejor funcionamiento. La realización de este preyecto se irá construyendo poco a poco en el transcurso de este semestre de clases. </p>";
+	   document.getElementById("parrafo").innerHTML=tab2;
+	
+	tab3+="<h1>Media</h1>";
+	tab3+="<video width='420' height='340' controls='controls'><source src='video.mp4' type='video/mp4' /></video>";
+	tab3+="<audio controls='controls' src='audio.mp3'></audio>";	
+		document.getElementById("media").innerHTML=tab3;
+	}	
+
+	<!-- VALIDACION CORREO RegEx -->
+function validar(valor)
+	{
+		if(/^[A-Z-a-z-0-9\-\_\.\]+@+[a-z]+[.]+[a-z]/.test(valor))
+			{
+				alert("Correto");
+				return (true);
+			}
+			else
+			{
+				alert("Correo Invalido");
+				return (false);
+			}	
+	}
+</script>
